@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hoppin | Retailer - Upload Image</title>
+  <link rel="stylesheet" href="/bootstrap-4.3.1/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img class="hamburg" src="/images/hamburg2.png" width="30" height="20" class="d-inline-block align-top">
+    </a>
+    <img class="logo" src="/images/final logo.png" height="30">
+  </nav>
+  <div class="brand-header">
+    <div class="brand-header-image" style="background-image: url('/images/simply-cakes.jpg')"></div>
+    <p class="brand-header-text">Simply Cakes</p>
+  </div>
+  <div class="upload-card">
+    <div id="main-image" class="main-upload-image" style="background-image:url('/images/blank-image.jpeg')"></div>
+    <input id="upload-input" style="display: none;" type="file" multiple accept="image/x-png,image/gif,image/jpeg" />
+    <div class="upload-images">
+      <!-- <div class="upload-image" style="background-image:url('/images/cake.png')"></div> -->
+      <div id="upload-btn" class="upload-image upload-add" style="background-image:url('/images/add-square4.png')"></div>
+    </div>
+  </div>
+  <div class="action-footer">
+    <div class="action-btn" style="background-image:url('/images/Wrong.png')"></div>
+    <a href="/retailer/add-details/">
+      <div class="action-btn" style="background-image:url('/images/Right.png')"></div>
+    </a>
+  </div>
+
+  
+  <script src=" https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js"
+    integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorig in="anonymous">
+  </script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyBY9ohIVQzBgBvp9uoTUQqeG1mmvmrBKj0",
+      authDomain: "hoppin-c25bd.firebaseapp.com",
+      databaseURL: "https://hoppin-c25bd.firebaseio.com",
+      projectId: "hoppin-c25bd",
+      storageBucket: "hoppin-c25bd.appspot.com",
+      messagingSenderId: "982807471709",
+      appId: "1:982807471709:web:203dc5c3f50abe6ddf4fb4",
+      measurementId: "G-KM61QL169X"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    var database = firebase.database();
+  </script>
+  <script>
+    var uploadBtn = document.getElementById('upload-btn');
+    var fileInput = document.getElementById('upload-input');
+    var mainImage = document.getElementById('main-image');
+    var onClickUpload = function() {
+      fileInput.click();
+    }
+    var onChangeFiles = function(e) {
+      var fr = new FileReader();
+      fr.onload = function () {
+        mainImage.style.backgroundImage = `url(${fr.result})`;
+      }
+      fr.readAsDataURL(e.target.files[0]);
+    }
+    uploadBtn.addEventListener('click', onClickUpload);
+    fileInput.addEventListener('change', onChangeFiles);
+  
+  </script>
+</body>
+
+</html>

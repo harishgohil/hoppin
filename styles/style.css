@@ -1,0 +1,106 @@
+body {
+  color: #444;
+}
+
+.hamburg {
+  position: relative;
+  padding-top: 1px;
+}
+
+.logo {
+  position: relative;
+  padding-right: 140px;
+}
+
+
+.img2 {
+  position: relative;
+  padding-left: 90px;
+}
+
+
+.brand-header {
+  padding: 8px 16px;
+  box-sizing: border-box;
+}
+
+.brand-header-image {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+.brand-header-text {
+  /* font-size: 22px; */
+  font-size: 18px;
+  letter-spacing: 1px;
+  /* text-transform: uppercase; */
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  margin-left: 8px;
+}
+
+.main-upload-image {
+  height: calc(100vh - 168px);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.upload-card {
+  position: relative;
+}
+
+.upload-images {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 8px 16px;
+  box-sizing: border-box;
+}
+
+.upload-image {
+  height: 100px;
+  width: 70px;
+  display: inline-block;
+  margin-right: 12px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.4);
+  border-radius: 4px;
+}
+
+.upload-image.upload-add {
+  background-size: 30px;
+  background-color: #FFF;
+  cursor: pointer;
+}
+
+.action-footer {
+  height: 56px;
+}
+
+.action-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.action-btn {
+  height: 40px;
+  width: 40px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-right: 8px;
+  margin-left: 8px;
+}
