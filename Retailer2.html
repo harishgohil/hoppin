@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="bootstrap-4.3.1/dist/css/bootstrap.css">
+    <title>Retailer2</title>
+</head>
+<style>
+    .hamburg{
+      position: relative;
+      padding-bottom: 2px;
+      padding-top: 6px;
+    }
+    
+    .logo{
+        position: relative;
+        padding-right: 140px;
+    }
+    .text1{
+        position: relative;
+        font-size: 25px;
+        padding-left: 15px;
+
+    }
+    .img2{
+        position: relative;
+        padding-left: 90px;
+    }
+    .card-img-top1{
+        position: absolute;
+        top: 65%;
+        left: 5%;
+       border: white solid 4px;
+
+    }
+    .card-img-top2{
+        position: absolute;
+        top: 65%;
+        left: 25%;
+        border: white solid 4px;
+    }
+ 
+</style>
+
+<body>
+   
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img class="hamburg" src="Images/hamburg2.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    </a>
+    <img class="logo" src="Images/final logo.png" height="30" >
+  </nav>
+  
+   
+    
+    
+    
+  
+  <div class="card-group">
+    <div class="card">
+      
+      
+    <div id="contact-me">
+        <div class="container mt-5">
+            
+            
+            <div class="row">
+                <div class="col">
+                    <div class="card bg-light">
+                        <div class="card-header text-white">
+                            
+                            <div class="form-group">
+                                <input type="text" placeholder=" Store name" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" placeholder=" Deal or Offer " class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control">          Cost Per Hour        INR200
+                                                                             Campaign Duration     2 Hours
+                                                                             Total Cost            INR400
+                                                                             (GST as applicable)</textarea>
+                                    
+                                </div>
+                                         
+                                                
+                            </div>
+                            
+                          
+
+                            
+            </div>
+
+        </div>
+
+      <div class="card-body">
+          <img class="img2" src="Images/Wrong.png"  height="70">
+          <img src="Images/Right.png" height="83">
+        
+      </div>
+    </div>
+  </div>
+  <script src=" https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js"
+  integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorig in="anonymous">
+</script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBY9ohIVQzBgBvp9uoTUQqeG1mmvmrBKj0",
+    authDomain: "hoppin-c25bd.firebaseapp.com",
+    databaseURL: "https://hoppin-c25bd.firebaseio.com",
+    projectId: "hoppin-c25bd",
+    storageBucket: "hoppin-c25bd.appspot.com",
+    messagingSenderId: "982807471709",
+    appId: "1:982807471709:web:203dc5c3f50abe6ddf4fb4",
+    measurementId: "G-KM61QL169X"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  var database = firebase.database();
+  </script>
+</body>
+
+</html>
