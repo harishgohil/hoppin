@@ -23,7 +23,7 @@
   </div>
   <div class="upload-card">
     <div id="main-image" class="main-upload-image" style="background-image:url('/images/blank-image.jpeg')"></div>
-    <input id="upload-input" style="display: none;" type="file" multiple accept="image/x-png,image/gif,image/jpeg" />
+    <input id="upload-input" style="display: none;" type="file" accept="image/x-png,image/gif,image/jpeg" />
     <div class="upload-images">
       <!-- <div class="upload-image" style="background-image:url('/images/cake.png')"></div> -->
       <div id="upload-btn" class="upload-image upload-add" style="background-image:url('/images/add-square4.png')"></div>
@@ -31,9 +31,7 @@
   </div>
   <div class="action-footer">
     <div class="action-btn" style="background-image:url('/images/Wrong.png')"></div>
-    <a href="/retailer/add-details/">
-      <div class="action-btn" style="background-image:url('/images/Right.png')"></div>
-    </a>
+    <div id="upload-image" class="action-btn1" style="background-image:url('/images/Right2.png')"></div>
   </div>
 
   
@@ -48,6 +46,7 @@
   </script>
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
 
   <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
@@ -68,24 +67,40 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
-    var database = firebase.database();
-  </script>
-  <script>
+    var db = firebase.firestore();
+
+    var thumb = '';
     var uploadBtn = document.getElementById('upload-btn');
     var fileInput = document.getElementById('upload-input');
     var mainImage = document.getElementById('main-image');
+    var acceptButton = document.getElementById('upload-image');
+
     var onClickUpload = function() {
       fileInput.click();
     }
     var onChangeFiles = function(e) {
       var fr = new FileReader();
       fr.onload = function () {
+        thumb = fr.result;
         mainImage.style.backgroundImage = `url(${fr.result})`;
       }
       fr.readAsDataURL(e.target.files[0]);
     }
     uploadBtn.addEventListener('click', onClickUpload);
     fileInput.addEventListener('change', onChangeFiles);
+
+    var onClickAccept = function() {
+      db.collection("deals").add({
+        image: thumb,
+      }).then(function(docRef) {
+        location.href= `/retailer/add-details/?id=${docRef.id}`;
+      }).catch(function(error) {
+        console.error("Error adding document: ", error);
+      });
+    }
+    
+    acceptButton.addEventListener('click', onClickAccept);
+
   
   </script>
 </body>
