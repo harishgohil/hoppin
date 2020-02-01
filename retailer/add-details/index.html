@@ -31,7 +31,7 @@
               <div class="card bg-light">
                 <div class="card-header text-white">
                   <div class="form-group">
-                    <input id="deal-store-name" type="text" placeholder=" Store name" class="form-control">
+                    <input id="deal-title" type="text" placeholder=" Store name" class="form-control">
                   </div>
                   <div class="form-group">
                     <input id="deal-description" type="text" placeholder="Deal or Offer " class="form-control">
@@ -102,10 +102,10 @@
           var db = firebase.firestore();
 
           function getValues() {
-            var storeName = document.getElementById('deal-store-name').value;
+            var title = document.getElementById('deal-title').value;
             var description = document.getElementById('deal-description').value;
             var duration = document.getElementById('deal-duration').value;
-            return {storeName, description, duration};
+            return {title, description, duration};
 
           }
 
